@@ -1,6 +1,6 @@
 = How long does it take you to create a RevealJS presentation ?
 
-:hp-tags: asciidoctor, revealjs, laszybones
+:hp-tags: asciidoctor, revealjs, lazybones
 
 After couple of months, I finally found a topic to create the very first topic in my new http://hubpress.io/[Hubpress.io] blog.
 
@@ -10,7 +10,9 @@ Recently thanks to Andres Almiray (https://twitter.com/aalmiray[@aalmiray]), I d
 
 That's why I have created the Asciidoctor-RevealJS template for Lazybones.
 
-== TL;DR
+== Long story short
+
+=== Let's play
 
 Once you installed everything (GVM and Lazybones) all you need to do is:
 
@@ -20,11 +22,34 @@ lazybones create asciidoctor-revealjs 0.1 myAwesomePresentation
 Then answer the questions (title for your presentation, who you are and the revealjs theme) and you are good to go.
 icon:thumbs-o-up[]
 
-If you look your current directory
+If you look your current directory you will found something like:
 
+[source]
+----
+gscheibel@~/labs/adocs/blog/myAwesomePresentation $ tree
+├── README.md
+├── build.gradle
+└── src
+    └── docs
+        └── asciidoc
+            ├── images
+            ├── slides
+            ├── slides.adoc
+            ├── snippets
+            └── styles
+----
 
-== The full setup
+All you need is under `src/docs/asciidoc/`, by default the main slide is `slides.adoc`. Remember the questions asked during the presentation setup, those information (title and author) are reused here. The theme can be found in the `build.gradle` file.
 
-=== GVM
+[source]
+----
+= Asciidoctor is awesome
+Guillaume Scheibel <guillaume.scheibel@gmail.com>
 
-=== Lazybones
+:imagesdir: images
+:sourcedir: snippets
+----
+
+=== Let's write
+
+A way to create your presentation is `one slide one file`, it means every time you want to create a slide, you create a file (in slides/ for instance) and then include it in slides.adoc using the include directive (eg: `include::slides/coolSlides.adoc[]`)

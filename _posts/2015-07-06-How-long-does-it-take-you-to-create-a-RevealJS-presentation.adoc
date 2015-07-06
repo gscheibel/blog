@@ -43,7 +43,7 @@ All you need is under `src/docs/asciidoc/`, by default the main slide is `slides
 
 [source]
 ----
-= Asciidoctor is awesome
+= How to write an HTML5 presentation with Asciidoctor and RevealJS ?
 Guillaume Scheibel <guillaume.scheibel@gmail.com>
 
 :imagesdir: images

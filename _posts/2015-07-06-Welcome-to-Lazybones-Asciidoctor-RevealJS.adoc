@@ -1,5 +1,7 @@
 = Welcome to Lazybones Asciidoctor-RevealJS
 
+:hp-tags: asciidoctor, revealjs, laszybones
+
 After couple of months, I finally found a topic to create the very first topic in my new http://hubpress.io/[Hubpress.io] blog.
 
 Today, we are going to talk about *Asciidoctor* and *RevealJS*. As you might know, you can use Asciidoctor to write and create RevealJS presentations. Therefore, if you are not familiar with Asciidoctor creating the first presentation can be tricky especially if you plan to use diagrams (or other external modules).

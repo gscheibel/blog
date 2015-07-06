@@ -64,7 +64,7 @@ $ gradle asciidoctor
 
 Then you'll find your presentation under `build/asciidoc/html5`.
 
-Interested by hot-relaod while you're writing ? `gradle watch` is going to become your best friend.
+Interested by hot-relaod while you're writing ? `$ gradle watch` is going to become your best friend.
 
 == Finally
 

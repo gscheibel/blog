@@ -17,7 +17,7 @@ That's why I have created the Asciidoctor-RevealJS template for Lazybones.
 Once you installed everything (GVM and Lazybones) all you need to do is:
 
 [source]
-$ lazybones create asciidoctor-revealjs 0.1 myAwesomePresentation
+$ lazybones create asciidoctor-revealjs 1.0.0 myAwesomePresentation
 
 Then answer the questions (title for your presentation, who you are and the revealjs theme) and you are good to go.
 icon:thumbs-o-up[]

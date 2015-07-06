@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "gscheibel",
-    "repositoryName": "blog",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"gscheibel","repositoryName":"blog","branch":"gh-pages"},"site":{"title":"Developer's thoughts","url":"https://gscheibel.github.io/blog"},"socialnetwork":{"email":"guillaume.scheibel@gmail.com","twitter":"@g_scheibel","github":"gscheibel"},"theme":{"name":"Casper","url":"//gscheibel.github.io/blog/themes/Casper"}}

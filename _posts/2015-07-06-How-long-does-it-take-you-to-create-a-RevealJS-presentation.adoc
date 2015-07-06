@@ -69,6 +69,6 @@ Interested by hot-relaod while you're writing ? `gradle watch` is going to becom
 == Finally
 
 To answer the question in the title, it only takes few seconds to create an RevealJS presentation thanks to *Asciidoctor* and *Lazybones*.
-The template sources are available on https://github.com/asciidoctor/asciidoctor-lazybones[Github] and the binaries on https://bintray.com/asciidoctor/maven/asciidoctor-revealjs-template/view[Bintray].
+The template sources are available on https://github.com/asciidoctor/asciidoctor-lazybones[Github] and the binaries on https://bintray.com/asciidoctor/maven/asciidoctor-revealjs[Bintray].
 
 

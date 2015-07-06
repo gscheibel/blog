@@ -4,9 +4,9 @@
 
 After a couple of months, I finally found a topic to write the very first post in my new http://hubpress.io/[Hubpress.io] blog.
 
-Today, we are going to talk about *Asciidoctor* and *RevealJS*. As you might know, you can use Asciidoctor to write and create RevealJS presentations. Therefore, if you are not familiar with Asciidoctor creating the first presentation can be tricky especially if you plan to use diagrams (or other external modules).
+Today, we are going to talk about *Asciidoctor* and *RevealJS*. As you might know, you can use Asciidoctor to write and create RevealJS presentations. Therefore, if you are not familiar with Asciidoctor creating the first presentation can be tricky, especially if you plan to use diagrams (or other external modules).
 
-Recently thanks to Andres Almiray (https://twitter.com/aalmiray[@aalmiray]), I discovered https://github.com/pledbrook/lazybones[Lazybones]. A very simple template generator for Gradle projects. With Lazybones you can start a Gradle projects such as Spring boot, Groovy or even AsciidoctorJ using only 1 command. Therefore you still had to  customize the generated project to be able to generate a RevealJS slideshow.
+Recently thanks to Andres Almiray (https://twitter.com/aalmiray[@aalmiray]), I discovered https://github.com/pledbrook/lazybones[Lazybones]. A very simple template generator for Gradle projects. With Lazybones you can start a Gradle projects such as Spring boot, Groovy or even AsciidoctorJ using only 1 command. Therefore you still had to customize the generated project to be able to generate a RevealJS slideshow.
 
 That's why I have created the Asciidoctor-RevealJS template for Lazybones.
 
@@ -22,7 +22,7 @@ $ lazybones create asciidoctor-revealjs 1.0.0 myAwesomePresentation
 Then answer the questions (title for your presentation, who you are and the revealjs theme to use) and you are good to go.
 icon:thumbs-o-up[]
 
-If you look your current directory you'll found something like:
+If you look in your current directory you'll find something like:
 
 [source]
 ----

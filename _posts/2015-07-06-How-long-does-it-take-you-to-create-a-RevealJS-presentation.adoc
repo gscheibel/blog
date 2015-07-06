@@ -2,7 +2,7 @@
 
 :hp-tags: asciidoctor, revealjs, lazybones
 
-After couple of months, I finally found a topic to create the very first topic in my new http://hubpress.io/[Hubpress.io] blog.
+After couple of months, I finally found a topic to write the very first post in my new http://hubpress.io/[Hubpress.io] blog.
 
 Today, we are going to talk about *Asciidoctor* and *RevealJS*. As you might know, you can use Asciidoctor to write and create RevealJS presentations. Therefore, if you are not familiar with Asciidoctor creating the first presentation can be tricky especially if you plan to use diagrams (or other external modules).
 
@@ -17,7 +17,7 @@ That's why I have created the Asciidoctor-RevealJS template for Lazybones.
 Once you installed everything (GVM and Lazybones) all you need to do is:
 
 [source]
-lazybones create asciidoctor-revealjs 0.1 myAwesomePresentation
+$ lazybones create asciidoctor-revealjs 0.1 myAwesomePresentation
 
 Then answer the questions (title for your presentation, who you are and the revealjs theme) and you are good to go.
 icon:thumbs-o-up[]
@@ -53,3 +53,22 @@ Guillaume Scheibel <guillaume.scheibel@gmail.com>
 === Let's write
 
 A way to create your presentation is `one slide one file`, it means every time you want to create a slide, you create a file (in slides/ for instance) and then include it in slides.adoc using the include directive (eg: `include::slides/coolSlides.adoc[]`)
+
+
+=== Let's create
+
+To create your presentation, all you need is a simple
+
+[source]
+$ gradle asciidoctor
+
+Then you'll find your presentation under `build/asciidoc/html5`.
+
+Interested by hot-relaod while you're writing ? `gradle watch` is going to become your best friend.
+
+== Finally
+
+To answer the question in the title, it only takes few seconds to create an RevealJS presentation thanks to *Asciidoctor* and *Lazybones*.
+The template sources are available on https://github.com/asciidoctor/asciidoctor-lazybones[Github] and the binaries on https://bintray.com/asciidoctor/maven/asciidoctor-revealjs-template/view[Bintray].
+
+

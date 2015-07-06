@@ -57,7 +57,7 @@ A way to create your presentation is `one slide one file`, it means every time y
 
 === Let's create
 
-To create your presentation, all you need is a simple
+To create your presentation, all you need is a simple gradle task
 
 [source]
 $ gradle asciidoctor

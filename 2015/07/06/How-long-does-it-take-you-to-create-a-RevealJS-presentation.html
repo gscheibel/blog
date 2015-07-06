@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>How long does it take you to create a RevealJS presentation ?</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//gscheibel.github.io/blog/themes/Casper/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//gscheibel.github.io/blog/themes/Casper/assets/css/screen.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://gscheibel.github.io/blog/2015/07/06/How-long-does-it-take-you-to-create-a-RevealJS-presentation.html" />
+    
+    <meta property="og:site_name" content="Developer&#x27;s thoughts" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How long does it take you to create a RevealJS presentation ?" />
+    <meta property="og:description" content="After couple of months, I finally found a topic to write the very first post in my new Hubpress.io blog. Today, we are going to talk about Asciidoctor and RevealJS. As you might know, you can use Asciidoctor to..." />
+    <meta property="og:url" content="https://gscheibel.github.io/blog/2015/07/06/How-long-does-it-take-you-to-create-a-RevealJS-presentation.html" />
+    <meta property="article:published_time" content="2015-07-05T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-07-06T18:29:55.364Z" />
+    <meta property="article:tag" content="asciidoctor" />
+    <meta property="article:tag" content="revealjs" />
+    <meta property="article:tag" content="lazybones" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="How long does it take you to create a RevealJS presentation ?" />
+    <meta name="twitter:description" content="After couple of months, I finally found a topic to write the very first post in my new Hubpress.io blog. Today, we are going to talk about Asciidoctor and RevealJS. As you might know, you can use Asciidoctor to..." />
+    <meta name="twitter:url" content="https://gscheibel.github.io/blog/2015/07/06/How-long-does-it-take-you-to-create-a-RevealJS-presentation.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Developer&#x27;s thoughts",
+    "author": {
+        "@type": "Person",
+        "name": "Guillaume Scheibel",
+        "image": "https://avatars.githubusercontent.com/u/758884?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": null
+    },
+    "headline": "How long does it take you to create a RevealJS presentation ?",
+    "url": "https://gscheibel.github.io/blog/2015/07/06/How-long-does-it-take-you-to-create-a-RevealJS-presentation.html",
+    "datePublished": "2015-07-05T23:00:00.000Z",
+    "dateModified": "2015-07-06T18:29:55.364Z",
+    "keywords": "asciidoctor,  revealjs,  lazybones",
+    "description": "After couple of months, I finally found a topic to write the very first post in my new Hubpress.io blog. Today, we are going to talk about Asciidoctor and RevealJS. As you might know, you can use Asciidoctor to..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Developer&#x27;s thoughts" href="https://gscheibel.github.io/blog/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-asciidoctor tag-revealjs tag-lazybones">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="https://gscheibel.github.io/blog">Home</a>
+        <!-- <a class="subscribe-button icon-feed" href="https://gscheibel.github.io/blog/rss/">Subscribe</a> -->
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-asciidoctor tag-revealjs tag-lazybones">
+
+        <header class="post-header">
+            <h1 class="post-title">How long does it take you to create a RevealJS presentation ?</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-07-06">06 July 2015</time>  on <a href="https://gscheibel.github.io/blog/tag/asciidoctor">asciidoctor</a>, <a href="https://gscheibel.github.io/blog/tag/revealjs"> revealjs</a>, <a href="https://gscheibel.github.io/blog/tag/lazybones"> lazybones</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>After couple of months, I finally found a topic to write the very first post in my new <a href="http://hubpress.io/">Hubpress.io</a> blog.</p>
+</div>
+<div class="paragraph">
+<p>Today, we are going to talk about <strong>Asciidoctor</strong> and <strong>RevealJS</strong>. As you might know, you can use Asciidoctor to write and create RevealJS presentations. Therefore, if you are not familiar with Asciidoctor creating the first presentation can be tricky especially if you plan to use diagrams (or other external modules).</p>
+</div>
+<div class="paragraph">
+<p>Recently thanks to Andres Almiray (<a href="https://twitter.com/aalmiray">@aalmiray</a>), I discovered <a href="https://github.com/pledbrook/lazybones">Lazybones</a>. A very simple template generator for Gradle projects. With Lazybones you can start a Gradle projects such as Spring boot, Groovy or even AsciidoctorJ using only 1 command. Therefore you still had to  customize the generated project to be able to generate a RevealJS slideshow.</p>
+</div>
+<div class="paragraph">
+<p>That&#8217;s why I have created the Asciidoctor-RevealJS template for Lazybones.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_long_story_short">Long story short</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_let_s_play">Let&#8217;s play</h3>
+<div class="paragraph">
+<p>Once you installed everything (GVM and Lazybones) all you need to do is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ lazybones create asciidoctor-revealjs 0.1 myAwesomePresentation</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then answer the questions (title for your presentation, who you are and the revealjs theme) and you are good to go.
+<span class="icon"><i class="fa fa-thumbs-o-up"></i></span></p>
+</div>
+<div class="paragraph">
+<p>If you look your current directory you will found something like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>gscheibel@~/labs/adocs/blog/myAwesomePresentation $ tree
+├── README.md
+├── build.gradle
+└── src
+    └── docs
+        └── asciidoc
+            ├── images
+            ├── slides
+            ├── slides.adoc
+            ├── snippets
+            └── styles</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All you need is under <code>src/docs/asciidoc/</code>, by default the main slide is <code>slides.adoc</code>. Remember the questions asked during the presentation setup, those information (title and author) are reused here. The theme can be found in the <code>build.gradle</code> file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>= Asciidoctor is awesome
+Guillaume Scheibel &lt;guillaume.scheibel@gmail.com&gt;
+
+:imagesdir: images
+:sourcedir: snippets</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_let_s_write">Let&#8217;s write</h3>
+<div class="paragraph">
+<p>A way to create your presentation is <code>one slide one file</code>, it means every time you want to create a slide, you create a file (in slides/ for instance) and then include it in slides.adoc using the include directive (eg: <code>include::slides/coolSlides.adoc[]</code>)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_let_s_create">Let&#8217;s create</h3>
+<div class="paragraph">
+<p>To create your presentation, all you need is a simple</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ gradle asciidoctor</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then you&#8217;ll find your presentation under <code>build/asciidoc/html5</code>.</p>
+</div>
+<div class="paragraph">
+<p>Interested by hot-relaod while you&#8217;re writing ? <code>gradle watch</code> is going to become your best friend.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_finally">Finally</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To answer the question in the title, it only takes few seconds to create an RevealJS presentation thanks to <strong>Asciidoctor</strong> and <strong>Lazybones</strong>.
+The template sources are available on <a href="https://github.com/asciidoctor/asciidoctor-lazybones">Github</a> and the binaries on <a href="https://bintray.com/asciidoctor/maven/asciidoctor-revealjs-template/view">Bintray</a>.</p>
+</div>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(https://avatars.githubusercontent.com/u/758884?v=3)"><span class="hidden">Guillaume Scheibel's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="">Guillaume Scheibel</a></h4>
+
+                    <p>Read <a href="">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=How%20long%20does%20it%20take%20you%20to%20create%20a%20RevealJS%20presentation%20%3F&amp;url=https://gscheibel.github.io/blog/2015/07/06/How-long-does-it-take-you-to-create-a-RevealJS-presentation.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://gscheibel.github.io/blog/2015/07/06/How-long-does-it-take-you-to-create-a-RevealJS-presentation.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://gscheibel.github.io/blog/2015/07/06/How-long-does-it-take-you-to-create-a-RevealJS-presentation.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://gscheibel.github.io/blog">Developer&#x27;s thoughts</a> &copy; 2015</section>
+        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//gscheibel.github.io/blog/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//gscheibel.github.io/blog/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+
+</body>
+</html>

@@ -2,11 +2,11 @@
 
 :hp-tags: asciidoctor, revealjs, lazybones
 
-After a couple of months, I finally found a topic to write the very first post in my new http://hubpress.io/[Hubpress.io] blog.
+After a couple of months, I finally found a topic to write the very first post in my new http://hubpress.io/[Hubpress.io^] blog.
 
 Today, we are going to talk about *Asciidoctor* and *RevealJS*. As you might know, you can use Asciidoctor to write and create RevealJS presentations. Therefore, if you are not familiar with Asciidoctor creating the first presentation can be tricky, especially if you plan to use diagrams (or other external modules).
 
-Recently thanks to Andres Almiray (https://twitter.com/aalmiray[@aalmiray]), I discovered https://github.com/pledbrook/lazybones[Lazybones]. A very simple template generator for Gradle projects. With Lazybones you can start a Gradle projects such as Spring boot, Groovy or even AsciidoctorJ using only 1 command. Therefore you still had to customize the generated project to be able to generate a RevealJS slideshow.
+Recently thanks to Andres Almiray (https://twitter.com/aalmiray[@aalmiray^]), I discovered https://github.com/pledbrook/lazybones[Lazybones^]. A very simple template generator for Gradle projects. With Lazybones you can start a Gradle projects such as Spring boot, Groovy or even AsciidoctorJ using only 1 command. Therefore you still had to customize the generated project to be able to generate a RevealJS slideshow.
 
 That's why I have created the Asciidoctor-RevealJS template for Lazybones.
 
@@ -14,7 +14,7 @@ That's why I have created the Asciidoctor-RevealJS template for Lazybones.
 
 === Let's play
 
-Once you installed everything (http://gvmtool.net[GVM] and Lazybones) all you need to do is:
+Once you installed everything (http://gvmtool.net[GVM^] and https://github.com/pledbrook/lazybones[Lazybones^]) all you need to do is:
 
 [source]
 $ lazybones create asciidoctor-revealjs 1.0.0 myAwesomePresentation
@@ -69,6 +69,6 @@ Interested by hot-relaod while you're writing ? `gradle watch` is going to becom
 == Finally
 
 To answer the question in the title, it only takes few seconds to create an RevealJS presentation thanks to *Asciidoctor* and *Lazybones*.
-The template sources are available on https://github.com/asciidoctor/asciidoctor-lazybones[Github] and the binaries on https://bintray.com/asciidoctor/maven/asciidoctor-revealjs[Bintray].
+The template sources are available on https://github.com/asciidoctor/asciidoctor-lazybones[Github^] and the binaries on https://bintray.com/asciidoctor/maven/asciidoctor-revealjs[Bintray^].
 
 

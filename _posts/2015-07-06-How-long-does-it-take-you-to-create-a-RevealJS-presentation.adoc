@@ -2,7 +2,7 @@
 
 :hp-tags: asciidoctor, revealjs, lazybones
 
-After couple of months, I finally found a topic to write the very first post in my new http://hubpress.io/[Hubpress.io] blog.
+After a couple of months, I finally found a topic to write the very first post in my new http://hubpress.io/[Hubpress.io] blog.
 
 Today, we are going to talk about *Asciidoctor* and *RevealJS*. As you might know, you can use Asciidoctor to write and create RevealJS presentations. Therefore, if you are not familiar with Asciidoctor creating the first presentation can be tricky especially if you plan to use diagrams (or other external modules).
 
@@ -14,15 +14,15 @@ That's why I have created the Asciidoctor-RevealJS template for Lazybones.
 
 === Let's play
 
-Once you installed everything (GVM and Lazybones) all you need to do is:
+Once you installed everything (http://gvmtool.net[GVM] and Lazybones) all you need to do is:
 
 [source]
 $ lazybones create asciidoctor-revealjs 1.0.0 myAwesomePresentation
 
-Then answer the questions (title for your presentation, who you are and the revealjs theme) and you are good to go.
+Then answer the questions (title for your presentation, who you are and the revealjs theme to use) and you are good to go.
 icon:thumbs-o-up[]
 
-If you look your current directory you will found something like:
+If you look your current directory you'll found something like:
 
 [source]
 ----

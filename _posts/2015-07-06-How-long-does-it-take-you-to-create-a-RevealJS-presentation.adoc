@@ -68,7 +68,7 @@ Interested by hot-relaod while you're writing ? `$ gradle watch` is going to bec
 
 === Let's start
 
-As usual, the fastest way to start is to use the *docker container* available https://registry.hub.docker.com/u/asciidoctor/docker-asciidoctor/[here] and via the `docker pull asciidoctor/docker-asciidoctor` command.
+As usual, the fastest way to start is to use the *docker container* available https://registry.hub.docker.com/u/asciidoctor/docker-asciidoctor/[here] and via the `$ docker pull asciidoctor/docker-asciidoctor` command.
 
 
 == Finally

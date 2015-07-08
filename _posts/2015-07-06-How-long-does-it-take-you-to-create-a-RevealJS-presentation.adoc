@@ -66,6 +66,11 @@ Then you'll find your presentation under `build/asciidoc/html5`.
 
 Interested by hot-relaod while you're writing ? `$ gradle watch` is going to become your best friend.
 
+=== Let's start
+
+As usual, the fastest way to start is to use the *docker container* available https://registry.hub.docker.com/u/asciidoctor/docker-asciidoctor/[here] and via the `docker pull asciidoctor/docker-asciidoctor` command.
+
+
 == Finally
 
 To answer the question in the title, it only takes few seconds to create an RevealJS presentation thanks to *Asciidoctor* and *Lazybones*.

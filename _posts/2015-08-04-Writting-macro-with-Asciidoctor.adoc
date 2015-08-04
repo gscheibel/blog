@@ -1,0 +1,10 @@
+= Writting macro with Asciidoctor
+:hp-tags: asciidoctor, macro, groovy
+
+When you start with a lightweight markup language such as Asciidoctor, the first thing you have to learn is to understand and learn the syntax.
+Alongside with this new language, you have your own functionnal language with its own references and shortcuts.
+In the Asciidoctor world, enhancing the default syntax with your own language is called `writting an macro`.
+
+Let's say, you're writting release notes in which you're referencing Github issues.
+Instead of copying the issue link all the time, it could be interesting to create an macro that will create the link for you.
+Once the macro created, you'll be able to write something like `github:9999` instead of `https://github.com/asciidoctor/asciidoctor/issues/9999`. If Github decides to change the issues URLs, you'll need to update the macro and not all the links you used.

@@ -2,9 +2,9 @@
 :hp-tags: asciidoctor, github pages, jenkins, continuous documentation
 
 If you are familiar with http://asciidoctor.org[Asciidoctor], then you already know about its continuous documentation capabilities especially if your documentation is alongside of your code base.
-Therefore, when you want to have an easy continuous documentation pipeline without having niether a build tool such as Maven, Gradle etc nor a specific hosting solution (even something simple) how to achieve that ?
+Therefore, when you want to have an easy continuous documentation pipeline without having neither a build tool such as Maven, Gradle etc nor a specific hosting solution (even something simple) so how to achieve that ?
 
-I have this question in the back of my head for quite some time now and recently I decided to tacle it and see if I can make my team at Expedia move out from Confluence while keeping an ease of use.
+I have this question in the back of my head for quite some time now and recently I decided to tackle it and see if I can make my team at Expedia move out from Confluence while keeping an ease of use.
 
 The idea is to be able to:
 

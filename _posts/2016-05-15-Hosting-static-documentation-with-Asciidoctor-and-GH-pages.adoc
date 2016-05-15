@@ -81,7 +81,6 @@ source .rvmrc <1>
 bundle install
 --
 
-
 <1> the file will install bundler is necessary
 
 [source, bash]

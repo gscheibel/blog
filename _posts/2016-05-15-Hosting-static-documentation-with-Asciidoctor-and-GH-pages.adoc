@@ -28,7 +28,7 @@ The job will then do 2 simple tasks:
 . Generating the HTML version of the documentation based on our Asciidoc files
 . Publishing the new version
 
-To avoid having to maintan an anvironment, the HTML documentation will be hosted on the Github page part of our repository.
+To avoid having to maintan an environment, the HTML documentation will be hosted on the Github page part of our repository.
 The second benefit is to keep both the source and the generated versions of the documentation at the "same place" and thus reduce the number of places / tools we have to look at / maintain etc.
 
 == Keep the extensibility of Asciidoctor

@@ -14,7 +14,7 @@ The idea is to be able to:
 
 == Edit the documentation
 
-As you can imagine, the source hosting will be done thanks to Github, but it could be via Gitlab for instance since (or Bitbuck maybe).
+As you can imagine, the source will be hosted on Github, but it could be via Gitlab for instance since (or Bitbuck maybe).
 Since Github allows the user to edit and commit / PR without having to checkout the project, anybody can update the documentation wihtout needing any knowledge about Git.
 
 == Minimize the publication process
@@ -22,7 +22,7 @@ Since Github allows the user to edit and commit / PR without having to checkout 
 *Keep it simple, stupid!*
 When you want to move out from a wiki, it's very important to keep the publication process as simple as possible, idealy clicking on "Commit changes" should be the only step to publish the new version.
 Thankfully, this one step approach is well known in the software industry as Continuous Integration and since we want to push live at each and every single commit Continuous Deployment.
-For this part, we will need an automation server like Jenkins (or TravisCI) and a job which will be triggered everytime someone commit.
+For this part, we will need an automation server like Jenkins (or TravisCI) and a job which will be triggered everytime someone commits.
 The job will then do 2 simple tasks:
 
 . Generating the HTML version of the documentation based on our Asciidoc files

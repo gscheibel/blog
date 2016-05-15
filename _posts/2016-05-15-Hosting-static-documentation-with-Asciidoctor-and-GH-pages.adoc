@@ -41,7 +41,6 @@ That's why in this case, we are going to use the Ruby API.
 
 The first thing to do is to create a git repository and add our starting point for our documentation `index.adoc` (with a bit of content just to double check).
 
-
 TIP: You can name this file differently but you will have to change the Asciidoctor configuration later as we want to have an index.html for the published version.
 
 The pipeline, for every single commit, will be the following:

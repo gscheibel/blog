@@ -1,0 +1,171 @@
+= Hosting static documentation with Asciidoctor and GH-pages
+:hp-tags: asciidoctor, github pages, jenkins, continuous documentation
+
+If you are familiar with http://asciidoctor.org[Asciidoctor], then you already know about its continuous documentation capabilities especially if your documentation is alongside of your code base.
+Therefore, when you want to have an easy continuous documentation pipeline without having niether a build tool such as Maven, Gradle etc nor a specific hosting solution (even something simple) how to achieve that ?
+
+I have this question in the back of my head for quite some time now and recently I decided to tacle it and see if I can make my team at Expedia move out from Confluence while keeping an ease of use.
+
+The idea is to be able to:
+
+* Edit the documentation easily
+* Minimize the publication process
+* Keep the extensibility of Asciidoctor
+
+== Edit the documentation
+
+As you can imagine, the source hosting will be done thanks to Github, but it could be via Gitlab for instance since (or Bitbuck maybe).
+Since Github allows the user to edit and commit / PR without having to checkout the project, anybody can update the documentation wihtout needing any knowledge about Git.
+
+== Minimize the publication process
+
+*Keep it simple, stupid!*
+When you want to move out from a wiki, it's very important to keep the publication process as simple as possible, idealy clicking on "Commit changes" should be the only step to publish the new version.
+Thankfully, this one step approach is well known in the software industry as Continuous Integration and since we want to push live at each and every single commit Continuous Deployment.
+For this part, we will need an automation server like Jenkins (or TravisCI) and a job which will be triggered everytime someone commit.
+The job will then do 2 simple tasks:
+
+. Generating the HTML version of the documentation based on our Asciidoc files
+. Publishing the new version
+
+To avoid having to maintan an anvironment, the HTML documentation will be hosted on the Github page part of our repository.
+The second benefit is to keep both the source and the generated versions of the documentation at the "same place" and thus reduce the number of places / tools we have to look at / maintain etc.
+
+== Keep the extensibility of Asciidoctor
+
+One of the most interesting features of Asciidcoctor, is its extensibility.
+Being able to create extension easily and enrich your documentation with your own syntax, your own semantic is crucial to keep it alive.
+That's why in this case, we are going to use the Ruby API.
+
+== Hands on
+
+The first thing to do is to create a git repository and add our starting point for our documentation `index.adoc` (with a bit of content just to double check).
+
+
+TIP: You can name this file differently but you will have to change the Asciidoctor configuration later as we want to have an index.html for the published version.
+
+The pipeline, for every single commit, will be the following:
+
+. The CI server will clone the project (master branch only)
+. Run the build script
+.. Initialize the ruby environment
+.. Generate the HTML documentation
+.. Push it live to the gh-pages of our repository
+
+=== The CI configuration
+
+For this part, all you need to do is to create a job that will clone the latest version (only the master branch) and to setup the trigger at every commit.
+If you are using Github (public or enterprise), you can use the webhook mechanism which will push an event for every commit leading to a new build.
+
+=== The build script
+
+The starting point here is a simple `build.sh` file executed via the Jenkins Execute shell build step.
+Having the whole build script outside of the CI job helps to reproduce it locally if needed.
+The complete process is performed is a new branch named gh-pages (to make the push easier)
+
+[source, bash]
+.build.sh
+git checkout --orphan gh-pages
+
+
+==== Initialize the Ruby environment
+
+For this part, I didn't want to have a prerequisite to install the Asciidoctor gem on the CI server or any environment which would reduce the reproductibility of the solution.
+Plus, triggering the generation from a single / simple task is again important.
+To achieve that, I use RVM and Bundler.
+
+[source, bash]
+.build.sh
+--
+rvm install 2.1.1
+source .rvmrc <1>
+bundle install
+--
+
+
+<1> the file will install bundler is necessary
+
+[source, bash]
+.rvmrc
+--
+rvm use --create --fuzzy 2.1.1@documentation
+
+if `bundle --version > /dev/null 2>&1`; then echo "bundler is installed"; else gem install bundler; fi
+--
+
+Then to be able to use Asciidoctor, we need to declare the dependency in a Gemfile.
+
+[source, ruby]
+.Gemfile
+--
+source "https://rubygems.org"
+
+gem 'asciidoctor', '~> 1.5', '>= 1.5.4'
+--
+
+==== Generate the HTML documentation
+
+The HTML generation will be trigger from the `build.sh` script and done by a Rake task. 
+the generated files will be create in a new folder `public`.
+
+[source, bash]
+.build.sh
+--
+OUTPUT_DIR="public"
+
+if [ ! -d $OUTPUT_DIR ]; then <1>
+  mkdir $OUTPUT_DIR
+fi
+
+echo "Generate asciidoctor documentation"
+bundle exec rake generate[$OUTPUT_DIR] <2>
+--
+
+<1> Create the public folder as it may not exist
+<2> Invoke the Rake task named `generate`
+
+The task itself is described in a `Rakefile` such as
+
+[source, ruby]
+.Rakefile
+--
+require 'asciidoctor'
+
+desc "Generate html pages"
+task :generate, [:output_dir] do |t, args|
+  Asciidoctor.convert_file 'index.adoc', :to_dir => args.output_dir, :safe => 'safe' <1>
+end
+--
+
+<1> Invoke the Asciidoctor Ruby API
+
+IMPORTANT: As we want to have the Asciidoctor style embeded into the generated HTML we have to set the safe mode to `safe`. For more information about this mode, you can have a look at the specific section of the http://asciidoctor.org/docs/user-manual/#running-asciidoctor-securely[user manual]
+
+==== Push it live to the gh-pages of our repository
+
+Now we have the generated version in the public folder, we need to push the content of this particular folder to the gh-pages.
+This branch will only contain the generated files and none of the source ones.
+To perform this operation, I use the `subtree` command, which is not part of the default git command.
+If you want to learn more about it: http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree.
+
+The step looks then like:
+
+[source, bash]
+.build.sh
+--
+echo "Publish to ewegithub pages"
+git add public/
+git commit -am "Publish new version"
+git push origin `git subtree split --prefix $OUTPUT_DIR gh-pages`:refs/heads/gh-pages --force <1>
+--
+
+<1> As the history of the gh-pages branch must be rewritten all the time (and to be honest) is not really important, we force the push to be sure the newest version will be published.
+
+
+== The result
+
+Once the CI job is done, you can see the result on the gh-pages of your repository at link:++http://{username}.github.io/{projectname}++[] for a public Github repository or link:++http://{yourgithubenterprise}/pages/{org name|username}/{projectname}++[].
+
+Now everytime someone will commit on the master branch, the CI job will generated the HTML version and push it live.
+
+You can find a template repository with all scripts and files mentioned above https://github.com/gscheibel/continous-documentation-template[here].

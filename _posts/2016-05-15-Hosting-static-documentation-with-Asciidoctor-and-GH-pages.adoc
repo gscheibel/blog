@@ -66,7 +66,6 @@ The complete process is performed is a new branch named gh-pages (to make the pu
 .build.sh
 git checkout --orphan gh-pages
 
-
 ==== Initialize the Ruby environment
 
 For this part, I didn't want to have a prerequisite to install the Asciidoctor gem on the CI server or any environment which would reduce the reproductibility of the solution.
@@ -158,7 +157,6 @@ git push origin `git subtree split --prefix $OUTPUT_DIR gh-pages`:refs/heads/gh-
 --
 
 <1> As the history of the gh-pages branch must be rewritten all the time (and to be honest) is not really important, we force the push to be sure the newest version will be published.
-
 
 == The result
 
